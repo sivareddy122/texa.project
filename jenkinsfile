@@ -1,0 +1,16 @@
+pepeline {
+  environment {
+    registry = "sivaredd77/newone"
+    registrycredential = "sivareddy77"
+  }
+  agent any
+  stages {
+    stage("building image") {
+      steps{
+        script {
+          docker.build registry + ":BUILD_NUMBER"
+        }
+      }
+    }
+  } 
+}
